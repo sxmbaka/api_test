@@ -1,3 +1,4 @@
+import 'package:api_test/pages/first_page.dart';
 import 'package:api_test/pages/home_page.dart';
 import 'package:api_test/pages/settings_page.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const FirstPage(),
     );
   }
 }
