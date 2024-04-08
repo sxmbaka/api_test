@@ -1,3 +1,6 @@
+import 'dart:js_interop';
+
+import 'package:api_test/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -23,8 +26,8 @@ class SettingsPage extends StatelessWidget {
         child: ListView(
           children: [
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text(
+              trailing: const Icon(Icons.home),
+              title: const Text(
                 "Home Page",
                 style: TextStyle(
                   fontSize: 18,
@@ -34,13 +37,18 @@ class SettingsPage extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushNamed(context, "/homepage");
-                
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const HomePage(),
+                      transitionDuration: Duration.zero),
+                );
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
+              trailing: const Icon(Icons.settings),
+              title: const Text(
                 "Settings Page",
                 style: TextStyle(
                   fontSize: 18,
@@ -48,6 +56,9 @@ class SettingsPage extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
           ],
         ),

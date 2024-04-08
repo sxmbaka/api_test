@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text(
+              trailing: const Icon(Icons.home),
+              title: const Text(
                 "Home Page",
                 style: TextStyle(
                   fontSize: 18,
@@ -39,8 +39,8 @@ class HomePage extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
+              trailing: const Icon(Icons.settings),
+              title: const Text(
                 "Settings Page",
                 style: TextStyle(
                   fontSize: 18,
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
                   context,
                   PageRouteBuilder(
                       pageBuilder: (context, animation, secondaryAnimation) =>
-                          SettingsPage(),
+                          const SettingsPage(),
                       transitionDuration: Duration.zero),
                 );
               },
